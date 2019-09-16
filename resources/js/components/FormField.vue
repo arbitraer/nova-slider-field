@@ -37,6 +37,7 @@ export default {
 
     methods: {
         refreshSlider() {
+            console.log('refresh');
             for(let i = 0; i < this.$refs.slider.length; i++) {
                 this.$refs.slider[i].refresh()
             }
