@@ -27,7 +27,20 @@ export default {
 
     props: ['resourceName', 'resourceId', 'field'],
 
+    updated() {
+        this.$nextTick(() => this.refreshSlider() )
+    },
+
+    created() {
+        this.$nextTick(() => this.refreshSlider() )
+    },
+
     methods: {
+        refreshSlider() {
+            for(let i = 0; i < this.$refs.slider.length; i++) {
+                this.$refs.slider[i].refresh()
+            }
+        },
         /*
          * Set the initial, internal value for the field.
          */
